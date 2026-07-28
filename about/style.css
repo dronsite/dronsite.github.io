@@ -29,6 +29,11 @@ body {
     box-sizing: border-box;
 }
 
+::selection {
+    color: #ffffff; /* Цвет текста */
+    background: #000; /* Цвет фона */
+}
+
 .title {
     font-size: 4.5rem;
     font-weight: normal;
