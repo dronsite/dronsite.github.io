@@ -32,6 +32,11 @@ body {
     /* Ensuring it's at the top of the screen on any device */
 }
 
+::selection {
+            color: #ffffff; /* Цвет текста */
+            background: #000; /* Цвет фона */
+}
+
 .title {
     font-family: 'ZT Neue Relewe', sans-serif;
     font-size: 4rem;
