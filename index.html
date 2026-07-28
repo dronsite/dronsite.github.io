@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>моё место в сети</title>
+    <!-- открой <style> -->
+    <style>
+        @font-face {
+            font-family: 'SF Pro';
+            src: local('SF Pro'), local('-apple-system'), local('BlinkMacSystemFont');
+            /* ну ты я посмотрю прям умник, аж в код залез */
+            /* держи пасхалку: зайди на раздел ../termoyader. */
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'ZT Neue Relewe';
+            src: url('https://myschproj.github.io/xernya/ZTNeueRalewe-Regular.woff2') format('woff2'),
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        /* --- СБРОС И БАЗОВЫЕ СТИЛИ --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #ffffff;
+            font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            height: 100vh;
+            width: 100vw;
+            overflow: hidden; /* Чтобы картинки, выходящие за экран, обрезались точно по краям */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .wrapper {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        /* --- ФОНОВЫЕ КАРТИНКИ ПО УГЛАМ (ЭЛЕМЕНТЫ) --- */
+        .collage-img {
+            position: absolute;
+            z-index: 1;
+            object-fit: contain;
+            pointer-events: none; /* Чтобы картинки не перекрывали клики по ссылкам */
+        }
+
+        /* Верхний левый угол */
+        .img-keyboard-statue {
+            top: 0;
+            left: 0;
+            width: 600px; /* Большой размер */
+            max-width: 600px;
+        }
+
+        /* Верхний правый угол */
+        .img-sketch-watch {
+            top: 0;
+            right: 0;
+            width: 600px;
+            max-width: 650px;
+        }
+
+        /* Нижний левый угол */
+        .img-letter {
+            bottom: 0;
+            left: 0;
+            width: 550px;
+            max-width: 600px;
+        }
+
+        /* Нижний правый угол */
+        .img-pillow-cig {
+            bottom: 0;
+            right: 0;
+            width: 850px;
+            max-width: 850px;
+        }
+
+        /* --- ЗАГОЛОВОК СВЕРХУ --- */
+        .top-text {
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-family: 'ZT Neue Relewe', 'Playfair Display', serif;
+            font-size: 2.3rem; /* умник, тут ты ничего больше не найдёшь */
+            color: #111111;
+            z-index: 10;
+            text-align: center;
+        }
+
+        /* --- ЦЕНТРАЛЬНАЯ ЧАСТЬ --- */
+        .center-content {
+            display: flex;
+            width: 85%;
+            max-width: 1400px;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 10;
+            position: relative;
+        }
+
+        /* Левая колонка (Меню) */
+        .left-col {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 50%;
+        }
+
+        .menu-box {
+            border: 1px solid #555;
+            border-radius: 12px;
+            padding: 20px 40px;
+            background: #ffffff;
+            text-align: left;
+            width: 85%; /* ну я же сказал вроде */
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+        }
+
+        .menu-item {
+            font-size: 1.8rem;
+            line-height: 2;
+            font-weight: 400;
+            text-transform: lowercase;
+        }
+
+        .menu-item a {
+            text-decoration: none;
+            color: #111;
+            transition: opacity 0.3s;
+        }
+
+        .menu-item a:hover {
+            opacity: 0.6;
+        }
+
+        /* Правая колонка (Слоган) */
+        .right-col {
+            display: flex;
+            justify-content: flex-end; /* Приближено к правому краю */
+            align-items: center;
+            width: 50%;
+            padding-right: 2%; /* Микроотступ от края для эстетики */
+        }
+
+        .right-slogan {
+            font-family: 'ZT Neue Relewe', 'Playfair Display', serif;
+            font-size: 2.4rem; /* Чуть-чуть меньше */
+            line-height: 1.2;
+            text-align: right;
+            color: #111;
+            letter-spacing: -0.5px;
+            white-space: nowrap; /* Строго в одну строку на ПК */
+        }
+
+        /* --- ПОДВАЛ --- */
+        .bottom-text {
+            position: absolute;
+            bottom: 40px;
+            text-align: center;
+            z-index: 10;
+            font-family: 'ZT Neue Relewe', 'Playfair Display', serif; /* Шрифт ZT Neue Relewe для подвала */
+            font-size: 0.9rem;
+            color: #333;
+            width: 100%;
+            line-height: 1.6;
+        }
+
+        .email {
+            display: block;
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #000;
+            margin-top: 4px;
+            letter-spacing: 1px;
+        }
+
+        /* --- АДАПТИВНОСТЬ (МОБИЛЬНЫЕ УСТРОЙСТВА) --- */
+        @media screen and (max-width: 768px) {
+            /* На телефонах скрываем угловые картинки, чтобы текст был читабельным */
+            .collage-img {
+                display: none;
+            }
+
+            .center-content {
+                flex-direction: column;
+                width: 90%;
+                gap: 40px;
+                margin-top: 60px;
+            }
+
+            .left-col, .right-col {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .menu-box {
+                text-align: center;
+                padding: 25px 30px;
+                width: 100%;
+                max-width: 320px;
+            }
+
+            .right-col {
+                padding-right: 0;
+                justify-content: center;
+            }
+
+            .right-slogan {
+                white-space: normal; /* Позволить перенос строк на мобильных */
+                text-align: center;
+                font-size: 1.8rem;
+                max-width: 100%;
+            }
+
+            .top-text {
+                top: 20px;
+                font-size: 1.8rem;
+            }
+
+            .bottom-text {
+                bottom: 15px;
+                font-size: 0.8rem;
+                padding: 0 10px;
+            }
+            
+            .email {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        
+        <!-- открой <head> -->
+        <img class="collage-img img-letter" src="https://raw.githubusercontent.com/myschproj/xernya/refs/heads/main/test/Снимок%20экрана%202026-07-26%20в%2022.10.22.png" alt="Письмо">
+        <img class="collage-img img-pillow-cig" src="https://raw.githubusercontent.com/myschproj/xernya/refs/heads/main/test/Снимок%20экрана%202026-07-26%20в%2022.10.54.png" alt="Подушка и сигареты">
+        <img class="collage-img img-sketch-watch" src="https://raw.githubusercontent.com/myschproj/xernya/refs/heads/main/test/Снимок%20экрана%202026-07-26%20в%2022.11.19.png" alt="Эскиз и часы">
+        <img class="collage-img img-keyboard-statue" src="https://raw.githubusercontent.com/myschproj/xernya/refs/heads/main/test/Снимок%20экрана%202026-07-26%20в%2022.11.41.png" alt="Клавиатура и статуи">
+
+        <div class="top-text">dron.ru</div>
+
+        <div class="center-content">
+
+            <div class="left-col">
+                <div class="menu-box">
+                    <div class="menu-item"><a href="https://myschproj.github.io/xernya/about" target="_blank">кто я</a></div>
+                    <div class="menu-item"><a href="https://myschproj.github.io/xernya/where" target="_blank">где я</a></div>
+                    <div class="menu-item"><a href="https://myschproj.github.io/xernya/contact" target="_blank">связь</a></div>
+                </div>
+            </div>
+
+            <!-- порыскай там, хз -->
+            <div class="right-col">
+                <div class="right-slogan">
+                    моё место в сети Интернет
+                </div>
+            </div>
+            
+        </div>
+
+        <div class="bottom-text">
+            <div>Если недоступен, пишите на почту</div>
+            <div class="email">dronhardrock@gmail.com</div>
+        </div>
+
+    </div>
+</body>
+</html>
