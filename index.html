@@ -1,3 +1,4 @@
+<!-- копирайт dron.ru, since 2021 -->
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -10,8 +11,7 @@
         @font-face {
             font-family: 'SF Pro';
             src: local('SF Pro'), local('-apple-system'), local('BlinkMacSystemFont');
-            /* ну ты я посмотрю прям умник, аж в код залез */
-            /* держи пасхалку: зайди на раздел ../termoyader. */
+            /* неужели подглядывать в css это настолько интересно? */
             font-weight: normal;
             font-style: normal;
         }
@@ -23,7 +23,6 @@
             font-style: normal;
         }
 
-        /* --- СБРОС И БАЗОВЫЕ СТИЛИ --- */
         * {
             margin: 0;
             padding: 0;
@@ -35,7 +34,7 @@
             font-family: 'SF Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             height: 100vh;
             width: 100vw;
-            overflow: hidden; /* Чтобы картинки, выходящие за экран, обрезались точно по краям */
+            overflow: hidden;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -57,18 +56,16 @@
             position: absolute;
             z-index: 1;
             object-fit: contain;
-            pointer-events: none; /* Чтобы картинки не перекрывали клики по ссылкам */
+            pointer-events: none;
         }
 
-        /* Верхний левый угол */
         .img-keyboard-statue {
             top: 0;
             left: 0;
-            width: 600px; /* Большой размер */
+            width: 600px;
             max-width: 600px;
         }
 
-        /* Верхний правый угол */
         .img-sketch-watch {
             top: 0;
             right: 0;
@@ -76,7 +73,7 @@
             max-width: 650px;
         }
 
-        /* Нижний левый угол */
+
         .img-letter {
             bottom: 0;
             left: 0;
@@ -84,7 +81,7 @@
             max-width: 600px;
         }
 
-        /* Нижний правый угол */
+
         .img-pillow-cig {
             bottom: 0;
             right: 0;
@@ -92,25 +89,24 @@
             max-width: 850px;
         }
 
-        /* --- ЗАГОЛОВОК СВЕРХУ --- */
+        /* --- вот эта хрень сверху --- */
         .top-text {
             position: absolute;
             top: 20px;
             left: 50%;
             transform: translateX(-50%);
             font-family: 'ZT Neue Relewe', 'Playfair Display', serif;
-            font-size: 2.3rem; /* умник, тут ты ничего больше не найдёшь */
+            font-size: 2.3rem; /* тут ты ничего больше не найдёшь, bro */
             color: #111111;
             z-index: 10;
             text-align: center;
         }
 
         ::selection {
-            color: #ffffff; /* Цвет текста */
-            background: #000; /* Цвет фона */
+            color: #ffffff;
+            background: #000;
         }
 
-        /* --- ЦЕНТРАЛЬНАЯ ЧАСТЬ --- */
         .center-content {
             display: flex;
             width: 85%;
@@ -121,7 +117,6 @@
             position: relative;
         }
 
-        /* Левая колонка (Меню) */
         .left-col {
             display: flex;
             justify-content: center;
@@ -157,7 +152,6 @@
             border-bottom: 1px #111;
         }
 
-        /* Правая колонка (Слоган) */
         .right-col {
             display: flex;
             justify-content: flex-end;
@@ -176,7 +170,6 @@
             white-space: nowrap; /* Строго в одну строку на ПК */
         }
 
-        /* --- ПОДВАЛ --- */
         .bottom-text {
             position: absolute;
             bottom: 40px;
@@ -212,9 +205,9 @@
             border-bottom: 1px #000000;
         }
 
-        /* --- АДАПТИВНОСТЬ (МОБИЛЬНЫЕ УСТРОЙСТВА) --- */
+        /* --- адаптивность --- */
         @media screen and (max-width: 768px) {
-            /* На телефонах скрываем угловые картинки, чтобы текст был читабельным */
+            /* На мобилах скрываем картинки */
             .collage-img {
                 display: none;
             }
@@ -244,7 +237,7 @@
             }
 
             .right-slogan {
-                white-space: normal; /* Позволить перенос строк на мобильных */
+                white-space: normal;
                 text-align: center;
                 font-size: 1.8rem;
                 max-width: 100%;
@@ -285,6 +278,9 @@
                     <div class="menu-item"><a href="https://dronsite.github.io/about" target="_blank">кто я</a></div>
                     <div class="menu-item"><a href="https://dronsite.github.io/where" target="_blank">где я</a></div>
                     <div class="menu-item"><a href="https://dronsite.github.io/contact" target="_blank">связь</a></div>
+                    <!-- Тебе ну прям вот НАСТОЛЬКО интересен исходник? Ладно, вот тебе ещё два пункта менюшки... -->
+                    <!-- <div class="menu-item"><a href="https://dronsite.github.io/use" target="_blank">юзаю</a></div> -->
+                    <!-- <div class="menu-item"><a href="https://dronsite.github.io/termoyader" target="_blank">...</a></div> -->
                 </div>
             </div>
 
@@ -304,3 +300,4 @@
     </div>
 </body>
 </html>
+<!-- bro just buy a book... -->
