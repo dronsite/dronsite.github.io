@@ -41,6 +41,16 @@ body {
     letter-spacing: 0.03em;
 }
 
+.icon {
+    width: 204pt;
+    height: 104pt;
+    justify-content: center;
+}
+
+.icon:hover {
+  fill: #DA4567;
+}
+
 /* Контейнер картинки */
 .image-wrapper {
     width: 100%;
