@@ -41,14 +41,14 @@ body {
     letter-spacing: 0.03em;
 }
 
-.icon a {
+.icon {
     width: 204pt;
     height: 104pt;
     justify-content: center;
     fill: #000000
 }
 
-.icon a:hover {
+.icon:hover {
   fill: #DA4567;
 }
 
