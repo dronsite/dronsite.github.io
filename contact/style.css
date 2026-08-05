@@ -26,6 +26,7 @@ body {
     height: 104pt;
     justify-content: center;
     fill: #000000
+    margin: 0 auto 50px auto
 }
 
 .icon:hover {
