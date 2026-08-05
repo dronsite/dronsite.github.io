@@ -45,6 +45,7 @@ body {
     width: 204pt;
     height: 104pt;
     justify-content: center;
+    fill: #000000
 }
 
 .icon a:hover {
