@@ -41,13 +41,13 @@ body {
     letter-spacing: 0.03em;
 }
 
-.icon {
+.icon a {
     width: 204pt;
     height: 104pt;
     justify-content: center;
 }
 
-.icon:hover {
+.icon a:hover {
   fill: #DA4567;
 }
 
