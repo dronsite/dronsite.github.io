@@ -18,6 +18,17 @@ body {
     box-sizing: border-box;
 }
 
+.icon {
+    width: 204pt;
+    height: 104pt;
+    justify-content: center;
+    fill: #000000
+}
+
+.icon:hover {
+  fill: #8A2BE2;
+}
+
 .container {
     max-width: 800px;
     width: 100%;
