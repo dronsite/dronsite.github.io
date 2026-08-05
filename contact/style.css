@@ -21,6 +21,17 @@ body {
     font-family: 'ZT Neue Relewe', 'EB Garamond', Georgia, serif;
 }
 
+.icon {
+    width: 204pt;
+    height: 104pt;
+    justify-content: center;
+    fill: #000000
+}
+
+.icon:hover {
+  fill: #8A2BE2;
+}
+
 .container {
     max-width: 900px;
     width: 100%;
