@@ -21,6 +21,12 @@ body {
     align-items: center;
     min-height: 100vh;
     background-image: url('https://raw.githubusercontent.com/dronsite/dronsite.github.io/refs/heads/main/images/Screenshot_20260830_002727_Photo%20Editor.jpg');
+    background-repeat: no-repeat;                 /* Отменяем повторение картинки */
+    background-position: center;                  /* Центрируем фон */
+    background-size: cover;                       /* Растягиваем на всю ширину и высоту */
+    background-attachment: fixed;                 /* Фиксируем фон при прокрутке (по желанию) */
+    margin: 0;                                    /* Убираем отступы по умолчанию */
+    height: 100vh;
     color: #000000;
     padding: 20px 0 40px 0;
 }
