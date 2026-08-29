@@ -1,82 +1,114 @@
-/* Подключение кастомного шрифта */
+/* Font-Face definition for ZT Neue Relewe */
 @font-face {
     font-family: 'ZT Neue Relewe';
-    /* Если у вас нет файла шрифта, закомментируйте эти строки, 
-       будет использоваться запасной шрифт EB Garamond */
-    src: url('https://myschproj.github.io/xernya/ZTNeueRalewe-Regular.woff2') format('woff2');
+    src: local('ZT Neue Relewe Regular'),
+         url('https://myschproj.github.io/xernya/ZTNeueRalewe-Regular.woff2') format('woff2'),
     font-weight: normal;
     font-style: normal;
+    font-display: swap;
 }
 
-body {
+* {
     margin: 0;
     padding: 0;
-    background-color: #ffffff;
-    color: #000000;
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    /* Запасной шрифт указывается на случай отсутствия ZT Neue Relewe */
-    font-family: 'ZT Neue Relewe', 'EB Garamond', Georgia, serif;
-}
-
-.container {
-    max-width: 900px;
-    width: 100%;
-    padding: 40px 20px;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     box-sizing: border-box;
 }
 
+body {
+    font-family: 'ZT Neue Relewe', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    background-image: url('https://raw.githubusercontent.com/dronsite/dronsite.github.io/refs/heads/main/images/Screenshot_20260830_002727_Photo%20Editor.jpg');
+    color: #000000;
+    padding: 20px 0 40px 0;
+}
+
+.header {
+    width: 100%;
+    text-align: center;
+    padding: 10px 15px;
+    /* Ensuring it's at the top of the screen on any device */
+}
+
+::selection {
+    color: #ffffff; /* Цвет текста */
+    background: #000; /* Цвет фона */
+}
+
 .title {
+    font-family: 'ZT Neue Relewe', sans-serif;
     font-size: 4rem;
     font-weight: normal;
-    letter-spacing: 2px;
-    margin-top: 0;
-    margin-bottom: 0.4em;
+    letter-spacing: 0.05em;
     color: #000;
 }
 
-.description {
-    font-size: 1.25rem;
-    line-height: 1.6;
-    max-width: 750px;
-    margin: 0 auto 50px auto;
-    text-align: center;
-    color: #222;
-}
-
-.image-wrapper {
+/* Using a container to restrict max-width for better responsiveness */
+.image-container {
     width: 100%;
-    max-width: 500px;
-    margin: 0 auto;
+    max-width: 1200px;
+    padding: 0 15px;
+    margin-top: 20px;
 }
 
-.image-wrapper img {
+.icon {
+    width: 204pt;
+    height: 104pt;
+    justify-content: center;
+    fill: #ffffff
+}
+
+.icon:hover {
+  fill: #8A2BE2;
+}
+
+.responsive-image {
+    display: block;
     width: 100%;
     height: auto;
-    display: block;
+    object-fit: cover;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
 }
 
-/* АДАПТИВНОСТЬ ДЛЯ МОБИЛЬНЫХ УСТРОЙСТВ (Responsive) */
+.content {
+    flex-grow: 1; /* Растягивается на всю оставшуюся высоту экрана */
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Центрирует текст по вертикали */
+    width: 100%;
+    padding: 30px 20px;
+    text-align: center;
+}
+
+.content p {
+    font-family: 'ZT Neue Relewe', sans-serif;
+    font-size: 1.45rem;
+    line-height: 1.6;
+    font-weight: normal;
+    color: #ffffff;
+}
+
+/* Mobile Adjustments */
 @media (max-width: 768px) {
     .title {
-        font-size: 2.5rem;
-        letter-spacing: 1px;
-        margin-bottom: 0.3em;
+        font-size: 2.8rem;
     }
-    
-    .description {
-        font-size: 1rem;
-        padding: 0 10px;
-        margin-bottom: 30px;
+    .content p {
+        font-size: 1.1rem;
     }
+}
 
-    .image-wrapper {
-        max-width: 90%;
+@media (max-width: 480px) {
+    .title {
+        font-size: 2.2rem;
+    }
+    .content p {
+        font-size: 1rem;
+        line-height: 1.5;
+    }
+    .image-container {
+        padding: 0 5px;
     }
 }
