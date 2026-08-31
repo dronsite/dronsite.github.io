@@ -17,7 +17,6 @@
 body {
     font-family: 'ZT Neue Relewe', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     display: flex;
-    position: fixed;
     flex-direction: column;
     align-items: center;
     min-height: 100vh;
